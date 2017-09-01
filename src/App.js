@@ -11,17 +11,21 @@ class App extends Component {
 
     this.state = {
       result: "",
-      filter: ''
+      filter: '',
+      userInput: ''
     }
   }
 
 
-  getResults = () => {
-    let query = this.state.filter
+  getResults = (event) => {
+    event.preventDefault()
+    let filter = this.state.filter
+    let query = (filter === 'comics' ? `titleStartsWith=${this.state.userInput}` : `nameStartsWith=${this.state.userInput}`)
+    console.log(query);
     let ts = new Date().getTime();
     const apikey = '16ebd0ee914895c73c269bc0c22c2a03'
     const privatekey = 'b4f4740799d5faf7a3dc5227f9c73d8824a2b440'
-    const Url= `http://gateway.marvel.com/v1/public/${query}?ts=${ts}&apikey=${apikey}&hash=${md5(ts+privatekey+apikey)}`
+    const Url= `http://gateway.marvel.com/v1/public/${filter}?${query}&ts=${ts}&apikey=${apikey}&hash=${md5(ts+privatekey+apikey)}`
     //this is a temporary URL that will eventually be an interpolation of arguments passed into get results from the search bar
     if (this.state.filter !== ""){
       console.log("I was clicked!")
@@ -32,6 +36,12 @@ class App extends Component {
         })
       )
     }
+  }
+
+  handleUserInput = (event) => {
+    this.setState({
+      userInput: event.target.value
+    })
   }
 
   handleChange = (event) => {
@@ -57,7 +67,10 @@ class App extends Component {
           <option value="comics">Comic</option>
           <option value="creators">Creator</option>
         </select>
-        <button onClick={this.getResults}>Search</button>
+        <form onSubmit={this.getResults}>
+          <input type="text" onChange={this.handleUserInput}/>
+          <input type="submit" value="Submit"/>
+        </form>
         <ResultsContainer result={this.state.result} filter={this.state.filter}/>
       </div>
     );
