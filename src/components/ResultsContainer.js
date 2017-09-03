@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
+import CharacterList from './CharacterList';
+import ComicList from './ComicList';
+import CreatorList from './CreatorList';
+
+
 
 export default class ResultsContainer extends Component {
 
-  determineResults = () => {
+
+  render() {
     switch (this.props.filter) {
       case 'comics':
-        return <div className="ui grid container">{this.props.result !== '' ? this.props.result.results.map(result => <div className="ui eight wide column">{result.title}</div>) : ""}</div>;
+        return <div><ComicList result={this.props.result}/></div>
       case 'characters':
-        return <div className="ui grid container">{this.props.result !== '' ? this.props.result.results.map(result => <div className="ui eight wide column">{result.name}</div>) : ""}</div>;
+        return <div><CharacterList result={this.props.result}/></div>
       case 'creators':
-        return <div className="ui grid container">{this.props.result !== '' ? this.props.result.results.map(result => <div className="ui eight wide column">{result.firstName}</div>) : ""}</div>;
+        return <div><CreatorList result={this.props.result}/></div>
       default:
         return <p></p>
     }
   }
-
-  render() {
-    return (
-      <div>{this.determineResults()}</div>
-    )
-  }
 }
+
+                                   
