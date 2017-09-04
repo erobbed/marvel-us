@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 .App {
   text-align: center;
@@ -12,6 +13,17 @@ body{
   background-color: rgb(34,34,34);
   justify-content: center;
   display: flex;
+}
+
+input#option{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
+}
+
+select#option{
+  height: 25px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
 }
 
 .cards {
