@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
 .App {
   text-align: center;
+  background-color: #222;
+  justify-content: center;
+  display: inline-block;
 }
 
 .App-logo {
@@ -7,11 +11,29 @@
   height: 80px;
 }
 
+div.ui.item.menu{
+  background: none;
+  display: flex;
+  width: 100%;
+}
+
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: rgb(212,3,24);
+  text-shadow: -0.25px 0 white, 0 1px white, 1px 0 white, 0 -0.25px white;
+}
+
+h1.title {
+  color: rgb(212,3,24);
+  font-family: 'Bangers', cursive;
+  text-shadow: -0.25px 0 white, 0 1px white, 1px 0 white, 0 -0.25px white;
+}
+
+h2.name{
+  color: rgb(212,3,24);
+  font-family: 'Bangers', cursive;
 }
 
 .App-intro {

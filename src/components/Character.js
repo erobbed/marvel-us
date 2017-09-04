@@ -6,7 +6,7 @@ const Character = ({character}) => {
   return (
     <div className="header">
       {console.log(character)}
-      <h4>{character.name.toUpperCase()}</h4>
+      <h2 className="name">{character.name.toUpperCase()}</h2>
       <div className="image">
         <img src={`${character.thumbnail.path}.jpg`} height="250" width="200" alt="default"/>
       </div>
