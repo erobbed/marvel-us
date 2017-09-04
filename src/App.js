@@ -51,7 +51,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" background="">
+      <div className="App">
         <div>
           <h2>Welcome to the Marvel Selector App</h2>
         </div>

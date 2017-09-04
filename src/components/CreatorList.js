@@ -1,9 +1,10 @@
 import React from 'react';
+import Creator from './Creator'
 
 const CreatorList = ({result}) => {
   return (
-    <div className="ui grid container">
-      {result !== '' ? result.results.map((result, index) => <div key={index} className="ui eight wide column"><h1>{result.firstName} {result.lastName}</h1></div>) : ""}
+    <div className="ui cards">
+      {result !== '' ? result.results.map((result, index) => <div key={index} className="card"><Creator/></div>) : ""}
     </div>
   )
 }

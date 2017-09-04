@@ -1,9 +1,10 @@
 import React from 'react';
+import Comic from './Comic'
 
 const ComicList = ({result}) => {
   return (
-    <div className="ui grid container">
-      {result !== '' ? result.results.map((result, index) => <div key={index} className="ui eight wide column"><h1>{result.title}</h1><p>{result.description}</p></div>) : ""}
+    <div className="ui cards">
+      {result !== '' ? result.results.map((r, index) => <div key={index} className="card"><Comic comic={r}/></div>) : ""}
     </div>
   )
 }
