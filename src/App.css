@@ -26,6 +26,10 @@ select#option{
   font-size: 9px;
 }
 
+.ui.three.item.menu{
+  margin: 0;
+}
+
 .cards {
   text-align: center;
   justify-content: center;

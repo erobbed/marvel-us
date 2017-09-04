@@ -53,21 +53,20 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <br/>
           <h1 className="title">Welcome to the Marvel <br/> Search App</h1>
         </div>
         <div className="ui three item menu">
           <select className="ui compact menu" onChange={this.handleChange} value={this.state.filter} id="option">
             <option value=""></option>
-            <option value="characters">Character</option>
-            <option value="comics">Comic</option>
-            <option value="creators">Creator</option>
+            <option value="characters">CHARACTER</option>
+            <option value="comics">COMIC</option>
+            <option value="creators">CREATOR</option>
           </select>
           <div className="ui search">
             <div className="ui icon input">
               <form onSubmit={this.getResults} id="search">
                 <input type="text" onChange={this.handleUserInput} placeholder="enter search here" id="option"/>
-                <input type="submit" id="option" value=" Search"/>
+                <input type="submit" id="option" value=" SEARCH"/>
               </form>
             </div>
           </div>
