@@ -4,7 +4,7 @@ import Creator from './Creator'
 const CreatorList = ({result}) => {
   return (
     <div className="ui cards">
-      {result !== '' ? result.results.map((result, index) => <div key={index} className="card"><Creator/></div>) : ""}
+      {result !== '' ? result.results.map((r, index) => <div key={index} className="card"><Creator creator={r} /></div>) : ""}
     </div>
   )
 }
