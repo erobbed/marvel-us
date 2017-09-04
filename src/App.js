@@ -63,10 +63,10 @@ class App extends Component {
             <option value="creators">CREATOR</option>
           </select>
           <div className="ui search">
-            <div className="ui icon input">
+            <div className="ui input" id="option">
               <form onSubmit={this.getResults} id="search">
-                <input type="text" onChange={this.handleUserInput} placeholder="enter search here" id="option"/>
-                <input type="submit" id="option" value=" SEARCH"/>
+                <input type="text" onChange={this.handleUserInput} placeholder="enter search here" id="option" value={this.state.userInput.toUpperCase()} />
+                <input type="submit" id="option" value="SEARCH"/>
               </form>
             </div>
           </div>
