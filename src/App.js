@@ -67,13 +67,14 @@ class App extends Component {
             <div className="ui icon input">
               <form onSubmit={this.getResults}>
                 <input type="text" onChange={this.handleUserInput} placeholder="enter your search here"/>
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Search"/>
               </form>
             </div>
           </div>
         </div>
         <img src='./The_Marvel_Universe.png' alt="logo"/>
         <ResultsContainer result={this.state.result} filter={this.state.filter}/>
+        <br/>
       </div>
     );
   }

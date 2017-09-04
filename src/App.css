@@ -2,16 +2,22 @@
 
 .App {
   text-align: center;
-  background-color: #222;
+  background-color: rgb(34,34,34);
   justify-content: center;
   display: inline-block;
 }
 
 body{
   text-align: center;
-  background-color: #222;
+  background-color: rgb(34,34,34);
   justify-content: center;
   display: flex;
+}
+
+.cards {
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
 }
 
 .App-logo {
@@ -34,6 +40,7 @@ div.ui.item.menu{
 }
 
 h1.title {
+  font-size: 45px;
   color: rgb(212,3,24);
   font-family: 'Bangers', cursive;
   text-shadow: -0.25px 0 white, 0 1px white, 1px 0 white, 0 -0.25px white;
