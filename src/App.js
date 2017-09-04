@@ -51,26 +51,28 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div >
-          <img src='./The_Marvel_Universe.png' alt="logo"/>
-          <h2>Welcome to Marvel Selector</h2>
+      <div className="App" background="">
+        <div>
+          <h2>Welcome to the Marvel Selector App</h2>
         </div>
-        <select className="ui search dropdown" onChange={this.handleChange} value={this.state.filter}>
-          <option value=""></option>
-          <option value="characters">Character</option>
-          <option value="comics">Comic</option>
-          <option value="creators">Creator</option>
-        </select>
-        <div className="ui search">
-          <div className="ui icon input">
-            <form onSubmit={this.getResults}>
-              <input type="text" onChange={this.handleUserInput}/>
-              <input type="submit" value="Submit"/>
-            </form>
+        <div className="ui three item menu">
+          <select className="ui compact menu" onChange={this.handleChange} value={this.state.filter}>
+            <option value=""></option>
+            <option value="characters">Character</option>
+            <option value="comics">Comic</option>
+            <option value="creators">Creator</option>
+          </select>
+          <div className="ui search">
+            <div className="ui icon input">
+              <form onSubmit={this.getResults}>
+                <input type="text" onChange={this.handleUserInput}/>
+                <input type="submit" value="Submit"/>
+              </form>
+            </div>
           </div>
-          <ResultsContainer result={this.state.result} filter={this.state.filter}/>
         </div>
+        <img src='./The_Marvel_Universe.png' alt="logo"/>
+        <ResultsContainer result={this.state.result} filter={this.state.filter}/>
       </div>
     );
   }
