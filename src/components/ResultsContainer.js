@@ -3,10 +3,7 @@ import CharacterList from './CharacterList';
 import ComicList from './ComicList';
 import CreatorList from './CreatorList';
 
-
-
 export default class ResultsContainer extends Component {
-
 
   render() {
     switch (this.props.filter) {
@@ -21,5 +18,3 @@ export default class ResultsContainer extends Component {
     }
   }
 }
-
-                                   

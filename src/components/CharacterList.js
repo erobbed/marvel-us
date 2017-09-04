@@ -1,8 +1,9 @@
 import React from 'react';
+import Character from './Character'
 
 const CharacterList = ({result}) => (
-  <div className="ui grid container">
-    {result !== '' ? result.results.map(result => <div className="ui eight wide column"><h1>{result.name}</h1><p>{result.description}</p></div>) : ""}
+  <div className="ui cards">
+    {result !== '' ? result.results.map((r, index) => <div className="card" key={index}><Character character={r}/></div>) : ""}
   </div>
 )
 

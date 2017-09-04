@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import ResultsContainer from './components/ResultsContainer'
 import md5 from 'js-md5'
@@ -28,7 +28,6 @@ class App extends Component {
     const Url= `http://gateway.marvel.com/v1/public/${filter}?${query}&ts=${ts}&apikey=${apikey}&hash=${md5(ts+privatekey+apikey)}`
     //this is a temporary URL that will eventually be an interpolation of arguments passed into get results from the search bar
     if (this.state.filter !== ""){
-      console.log("I was clicked!")
       fetch(Url)
       .then(res => res.json())
       .then(res => this.setState({
@@ -50,28 +49,30 @@ class App extends Component {
     })
   }
 
-  componentDidUpdate(){
-    console.log(this.state.result);
-  }
-
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <div >
+
           <h2>Welcome to Marvel Selector</h2>
         </div>
-        <select onChange={this.handleChange} value={this.state.filter}>
+        <select className="ui search dropdown" onChange={this.handleChange} value={this.state.filter}>
           <option value=""></option>
           <option value="characters">Character</option>
           <option value="comics">Comic</option>
           <option value="creators">Creator</option>
         </select>
-        <form onSubmit={this.getResults}>
-          <input type="text" onChange={this.handleUserInput}/>
-          <input type="submit" value="Submit"/>
-        </form>
-        <ResultsContainer result={this.state.result} filter={this.state.filter}/>
+        <div className="ui search">
+          <div className="ui icon input">
+            <form onSubmit={this.getResults}>
+              <input type="text" onChange={this.handleUserInput}/>
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+          <div className="results">
+            <ResultsContainer result={this.state.result} filter={this.state.filter}/>
+          </div>
+        </div>
       </div>
     );
   }
