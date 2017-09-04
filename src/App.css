@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers');
+
 .App {
   text-align: center;
   background-color: #222;
   justify-content: center;
   display: inline-block;
+}
+
+body{
+  text-align: center;
+  background-color: #222;
+  justify-content: center;
+  display: flex;
 }
 
 .App-logo {
