@@ -2,9 +2,9 @@ import React from 'react'
 
 const Character = ({character}) => {
   return (
-    <div className="content">
-      {console.log(character.name)}
-      {character.name}
+    <div className="header">
+      {console.log(character)}
+      <h4>{character.name}</h4>
     </div>
   )
 }

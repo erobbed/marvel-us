@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <div className="App">
         <div >
-
+          <img src='./The_Marvel_Universe.png' alt="logo"/>
           <h2>Welcome to Marvel Selector</h2>
         </div>
         <select className="ui search dropdown" onChange={this.handleChange} value={this.state.filter}>
@@ -69,9 +69,7 @@ class App extends Component {
               <input type="submit" value="Submit"/>
             </form>
           </div>
-          <div className="results">
-            <ResultsContainer result={this.state.result} filter={this.state.filter}/>
-          </div>
+          <ResultsContainer result={this.state.result} filter={this.state.filter}/>
         </div>
       </div>
     );
