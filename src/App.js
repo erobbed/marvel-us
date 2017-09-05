@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import ResultsContainer from './components/ResultsContainer'
 import md5 from 'js-md5'
-import Character from './components/Character'
-import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -28,6 +26,7 @@ class App extends Component {
     const apikey = '16ebd0ee914895c73c269bc0c22c2a03'
     const privatekey = 'b4f4740799d5faf7a3dc5227f9c73d8824a2b440'
     const Url= `http://gateway.marvel.com/v1/public/${filter}?${query}&ts=${ts}&apikey=${apikey}&hash=${md5(ts+privatekey+apikey)}`
+    //this is a temporary URL that will eventually be an interpolation of arguments passed into get results from the search bar
     if (this.state.filter !== ""){
       fetch(Url)
       .then(res => res.json())
@@ -50,37 +49,31 @@ class App extends Component {
     })
   }
 
-
   render() {
     return (
       <div className="App">
         <div>
+          <br/>
           <h1 className="title">Welcome to the Marvel <br/> Search App</h1>
         </div>
         <div className="ui three item menu">
-          <select className="ui compact menu" onChange={this.handleChange} value={this.state.filter} id="option">
+          <select className="ui compact menu" onChange={this.handleChange} value={this.state.filter}>
             <option value=""></option>
-            <option value="characters">CHARACTER</option>
-            <option value="comics">COMIC</option>
-            <option value="creators">CREATOR</option>
+            <option value="characters">Character</option>
+            <option value="comics">Comic</option>
+            <option value="creators">Creator</option>
           </select>
           <div className="ui search">
-            <div className="ui input" id="option">
-              <form onSubmit={this.getResults} id="search">
-                <input type="text" onChange={this.handleUserInput} placeholder="enter search here" id="option" value={this.state.userInput.toUpperCase()} />
-                <input type="submit" id="option" value="SEARCH"/>
+            <div className="ui icon input">
+              <form onSubmit={this.getResults}>
+                <input type="text" onChange={this.handleUserInput} placeholder="enter your search here"/>
+                <input type="submit" value="Submit"/>
               </form>
             </div>
           </div>
         </div>
         <img src='./The_Marvel_Universe.png' alt="logo"/>
         <ResultsContainer result={this.state.result} filter={this.state.filter}/>
-        <br/>
-
-    <Switch>
-      <Route exact path='/results' component={ResultsContainer}/>
-      <Route path='/character/:character_id' component={Character}/>
-    </Switch>
       </div>
     );
   }

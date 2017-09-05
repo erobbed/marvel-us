@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ComicCard = ({comic}) => {
+const Comic = ({comic}) => {
   return (
     <div className="header">
       {console.log(comic)}
@@ -12,4 +12,4 @@ const ComicCard = ({comic}) => {
   )
 }
 
-export default ComicCard
+export default Comic
