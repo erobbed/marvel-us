@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+
 import md5 from 'js-md5'
 
 class Character extends Component {
@@ -36,8 +36,9 @@ class Character extends Component {
     console.log(this.state.character)
     // debugger
     return (
-      <div>
-       <h1>{this.state.character.name}</h1>
+      <div className="card">
+       <h1 className="title">{this.state.character.name}</h1>
+
       </div>
     )
   }
@@ -45,3 +46,9 @@ class Character extends Component {
 }
 
 export default Character
+
+
+//<div className="image">
+//   <img src={`${this.state.character.thumbnail.path}.jpg`} height="250" width="200" alt="default"/>
+// </div>
+// <p>{this.character.description}</p>
