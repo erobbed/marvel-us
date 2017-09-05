@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 import ResultsContainer from './components/ResultsContainer'
 import md5 from 'js-md5'
+import Character from './components/Character'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -26,7 +28,6 @@ class App extends Component {
     const apikey = '16ebd0ee914895c73c269bc0c22c2a03'
     const privatekey = 'b4f4740799d5faf7a3dc5227f9c73d8824a2b440'
     const Url= `http://gateway.marvel.com/v1/public/${filter}?${query}&ts=${ts}&apikey=${apikey}&hash=${md5(ts+privatekey+apikey)}`
-    //this is a temporary URL that will eventually be an interpolation of arguments passed into get results from the search bar
     if (this.state.filter !== ""){
       fetch(Url)
       .then(res => res.json())
@@ -48,6 +49,7 @@ class App extends Component {
       filter: event.target.value
     })
   }
+
 
   render() {
     return (
@@ -72,7 +74,12 @@ class App extends Component {
           </div>
         </div>
         <img src='./The_Marvel_Universe.png' alt="logo"/>
-        <ResultsContainer result={this.state.result} filter={this.state.filter}/>
+        <Switch>
+          <Route exact path='/' render={()=>
+            <ResultsContainer result={this.state.result} filter={this.state.filter}/>
+          }/>
+          <Route path='/character/:character_id' component={Character}/>
+        </Switch>
         <br/>
       </div>
     );
