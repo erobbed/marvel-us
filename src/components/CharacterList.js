@@ -1,9 +1,9 @@
 import React from 'react';
-import Character from './Character'
+import CharacterCard from './CharacterCard'
 
 const CharacterList = ({result}) => (
   <div className="ui cards">
-    {result !== '' ? result.results.map((r, index) => <div className="card" key={index}><Character character={r}/></div>) : ""}
+    {result !== '' ? result.results.map((r, index) => <div className="card" key={index}><CharacterCard character={r}/></div>) : ""}
   </div>
 )
 

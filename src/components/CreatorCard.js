@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Creator = ({creator}) => {
+const CreatorCard = ({creator}) => {
   return (
     <div className="header">
       {console.log(creator)}
@@ -12,4 +12,4 @@ const Creator = ({creator}) => {
   )
 }
 
-export default Creator
+export default CreatorCard

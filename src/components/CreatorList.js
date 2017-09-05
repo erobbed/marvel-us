@@ -1,10 +1,10 @@
 import React from 'react';
-import Creator from './Creator'
+import CreatorCard from './CreatorCard'
 
 const CreatorList = ({result}) => {
   return (
     <div className="ui cards">
-      {result !== '' ? result.results.map((r, index) => <div key={index} className="card"><Creator creator={r} /></div>) : ""}
+      {result !== '' ? result.results.map((r, index) => <div key={index} className="card"><CreatorCard creator={r} /></div>) : ""}
     </div>
   )
 }
